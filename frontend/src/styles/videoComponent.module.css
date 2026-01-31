@@ -68,19 +68,32 @@
 }
 
 .chatRoom {
-    position: absolute;
-    height: 95vh;
-    top: 2.5vh;
-    right: 20px;
-    background: rgba(30, 30, 30, 0.95);
-    backdrop-filter: blur(15px);
-    border-radius: 20px;
-    width: 350px;
-    padding: 20px;
-    z-index: 101;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
-    color: white;
+    width: 380px;
+    height: 100%;
+    background: #1e1e1e;
+    border-left: 1px solid #333;
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+    transition: transform 0.3s ease-in-out;
+}
+
+.conferenceWrapper {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.mainVideoArea {
+    flex: 1;
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+    transition: all 0.3s ease;
 }
 
 .chatContainer {

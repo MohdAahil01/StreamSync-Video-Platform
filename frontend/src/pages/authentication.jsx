@@ -137,7 +137,11 @@ export default function Authentication() {
                             name="username"
                             value={username}
                             onChange={(e) => setUsername(e.target.value)}
-
+                            onKeyDown={(e) => {
+                                if (e.key === 'Enter') {
+                                    handleAuth();
+                                }
+                            }}
                         />
                         <TextField
                             margin="normal"
@@ -148,7 +152,11 @@ export default function Authentication() {
                             value={password}
                             type="password"
                             onChange={(e) => setPassword(e.target.value)}
-
+                            onKeyDown={(e) => {
+                                if (e.key === 'Enter') {
+                                    handleAuth();
+                                }
+                            }}
                             id="password"
                         />
 
