@@ -12,6 +12,7 @@ import ScreenShareIcon from '@mui/icons-material/ScreenShare';
 import StopScreenShareIcon from '@mui/icons-material/StopScreenShare'
 import ChatIcon from '@mui/icons-material/Chat'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { useNavigate } from 'react-router-dom';
 import server from '../environment';
 import withAuth from '../utils/withAuth';
 
@@ -27,6 +28,8 @@ const peerConfigConnections = {
 }
 
 function VideoMeetComponent() {
+
+    const navigate = useNavigate();
 
     var socketRef = useRef();
     let socketIdRef = useRef();
@@ -391,7 +394,7 @@ function VideoMeetComponent() {
             let tracks = localVideoRef.current.srcObject.getTracks()
             tracks.forEach(track => track.stop())
         } catch (e) { }
-        window.location.href = "/home"
+        navigate("/home")
     }
 
     let openChat = () => {
@@ -439,7 +442,7 @@ function VideoMeetComponent() {
                     position: 'relative'
                 }}>
                     <IconButton
-                        onClick={() => window.location.href = "/home"}
+                        onClick={() => navigate("/home")}
                         sx={{ position: 'absolute', top: 10, left: 10, color: 'white' }}
                     >
                         <ArrowBackIcon />
